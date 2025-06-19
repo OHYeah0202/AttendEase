@@ -1,0 +1,10 @@
+2025-06-11 14:35:18,726 - INFO - 📁 Reading masterdata.xlsx...
+2025-06-11 14:35:19,786 - INFO - 📊️ Data Processing...
+2025-06-11 14:35:24,429 - INFO - 🏢 Processing Department: Altek Medical/DL ACS
+2025-06-11 14:35:24,429 - ERROR - ❌ An error occurred while executing the program！
+2025-06-11 14:35:24,430 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 371, in <module>
+    wb_dept = wb_employee.copy()
+              ^^^^^^^^^^^^^^^^
+AttributeError: 'Workbook' object has no attribute 'copy'
+

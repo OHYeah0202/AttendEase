@@ -1,0 +1,25 @@
+2025-05-20 10:12:14,093 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-20 10:12:14,292 - INFO - 📊️ Data Processing...
+2025-05-20 10:12:14,411 - ERROR - ❌ An error occurred while executing the program！
+2025-05-20 10:12:14,415 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 346, in <module>
+    group['DAY TYPE'] = group.apply(auto_day_type, axis=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+           ^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 916, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 243, in auto_day_type
+    if not record.empty and not shift_code.empty:
+                                ^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'empty'
+
+2025-05-20 10:12:17,676 - INFO - 💾 Saving in progress...Please be patient

@@ -1,0 +1,42 @@
+2025-05-22 17:16:15,054 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-22 17:16:15,547 - INFO - 📊️ Data Processing...
+2025-05-22 17:16:15,784 - ERROR - ❌ An error occurred while executing the program！
+2025-05-22 17:16:15,792 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Employee ID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 413, in <module>
+    group['MANUAL OT'] = group.apply(map_manual_ot, axis=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+           ^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 916, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 271, in map_manual_ot
+    record = manualot_df[(manualot_df['Employee ID'] == row['Emploee ID']) &
+                          ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Employee ID'
+
+2025-05-22 17:16:19,998 - INFO - 💾 Saving in progress...Please be patient

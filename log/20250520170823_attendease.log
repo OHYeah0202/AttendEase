@@ -1,0 +1,22 @@
+2025-05-20 17:08:23,319 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-20 17:08:23,547 - INFO - 📊️ Data Processing...
+2025-05-20 17:08:23,548 - ERROR - ❌ An error occurred while executing the program！
+2025-05-20 17:08:23,550 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 327, in <module>
+    shutil.copy(EMPLOYEE_TEMPLATE_PATH, EMPLOYEE_OUTPUT_PATH)
+  File "C:\Users\ythsi\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 423, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\ythsi\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'output\\May_Employees_Report.xlsx'
+
+2025-05-20 17:08:26,287 - INFO - 💾 Generating 8232001-Hsieh Yu Ting Employee Report...
+2025-05-20 17:08:26,289 - ERROR - ❌ An error occurred while executing the program！
+2025-05-20 17:08:26,297 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 494, in <module>
+    source_sheet_employee = wb_employee['Sheet1']
+                            ^^^^^^^^^^^
+NameError: name 'wb_employee' is not defined
+
+2025-05-20 17:08:28,600 - INFO - 💾 Saving in progress...Please be patient

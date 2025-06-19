@@ -1,0 +1,10 @@
+2025-06-12 08:25:55,516 - INFO - 📁 Reading masterdata.xlsx...
+2025-06-12 08:25:56,533 - INFO - 📊️ Data Processing...
+2025-06-12 08:25:59,071 - INFO - 🏢 Processing Department: Altek Medical/DL ACS
+2025-06-12 08:25:59,099 - ERROR - ❌ An error occurred while executing the program！
+2025-06-12 08:25:59,112 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 374, in <module>
+    if 'Sheet1' in wb_dept.sheetnames:
+                   ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Worksheet' object has no attribute 'sheetnames'
+

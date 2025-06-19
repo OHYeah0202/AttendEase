@@ -1,0 +1,43 @@
+2025-05-20 10:24:02,440 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-20 10:24:02,656 - INFO - 📊️ Data Processing...
+2025-05-20 10:24:02,859 - INFO - 💾 Generating 8232001-Hsieh Yu Ting Worksheet...
+2025-05-20 10:24:02,982 - INFO - 💾 Generating 8232003-Muhammad Irfan bin Mohamad Worksheet...
+2025-05-20 10:24:03,110 - INFO - 💾 Generating 8232005-Siti Norhafiza binti Idris Worksheet...
+2025-05-20 10:24:03,125 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,125 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-15 00:00:00
+2025-05-20 10:24:03,126 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,126 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-16 00:00:00
+2025-05-20 10:24:03,126 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,127 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-17 00:00:00
+2025-05-20 10:24:03,127 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,127 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-18 00:00:00
+2025-05-20 10:24:03,127 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,127 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-19 00:00:00
+2025-05-20 10:24:03,128 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,128 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-20 00:00:00
+2025-05-20 10:24:03,128 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,128 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-21 00:00:00
+2025-05-20 10:24:03,130 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:24:03,130 - ERROR - ❌ An error occurred while executing the program！
+2025-05-20 10:24:03,133 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 360, in <module>
+    group['OT'] = group.apply(calc_ot, axis=1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+           ^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 916, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 165, in calc_ot
+    if shift_code.strip().upper() == 'A1' or shift_code.strip().upper() == 'A2':
+       ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+2025-05-20 10:24:07,893 - INFO - 💾 Saving in progress...Please be patient

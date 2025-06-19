@@ -1,0 +1,9 @@
+2025-05-22 17:21:47,043 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-22 17:21:47,417 - INFO - 📊️ Data Processing...
+2025-05-22 17:21:47,626 - ERROR - ❌ An error occurred while executing the program！
+2025-05-22 17:21:47,627 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 460, in <module>
+    weekly_counters['MANUAL OT'] += row['MANUAL OT']
+TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+
+2025-05-22 17:21:50,995 - INFO - 💾 Saving in progress...Please be patient

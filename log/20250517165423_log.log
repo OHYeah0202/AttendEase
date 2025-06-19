@@ -1,0 +1,17 @@
+2025-05-17 16:54:23,522 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-17 16:54:23,562 - INFO - 📊️ Data Processing...
+2025-05-17 16:54:23,620 - ERROR - ❌ An error occurred while executing the program！
+2025-05-17 16:54:23,620 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 231, in <module>
+    master_df['Clock-in'] = pd.to_datetime(master_df['Clock-in'], errors='coerce').dt.time
+                                           ~~~~~~~~~^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-05-17 16:54:28,269 - ERROR - ❌ An error occurred while executing the program！
+2025-05-17 16:54:28,271 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 243, in <module>
+    grouped = master_df.groupby('Employee ID')
+              ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'groupby'
+
+2025-05-17 16:54:30,043 - INFO - 💾 Saving in progress...Please be patient

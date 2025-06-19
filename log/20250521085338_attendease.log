@@ -1,0 +1,26 @@
+2025-05-21 08:53:38,996 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-21 08:53:39,359 - INFO - 📊️ Data Processing...
+2025-05-21 08:53:39,467 - ERROR - ❌ An error occurred while executing the program！
+2025-05-21 08:53:39,473 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 378, in <module>
+    group['DAY TYPE'] = group.apply(auto_day_type, axis=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+           ^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 916, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 241, in auto_day_type
+    (holiday_df['Employee ID'] == row['Employee ID']) and
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+2025-05-21 08:53:42,074 - INFO - 💾 Saving in progress...Please be patient

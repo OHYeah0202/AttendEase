@@ -1,0 +1,14 @@
+2025-06-13 10:19:33,526 - INFO - 📁 Reading masterdata.xlsx...
+2025-06-13 10:19:34,568 - INFO - 📊️ Data Processing...
+2025-06-13 10:24:49,151 - INFO - 🏢 Processing Department: Altek Medical/DL ACS
+2025-06-13 10:24:49,152 - ERROR - ❌ An error occurred while executing the program！
+2025-06-13 10:24:49,174 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 373, in <module>
+    shutil.copy(EMPLOYEE_TEMPLATE_PATH, DEPARTMENT_OUTPUT_PATH)
+  File "C:\Users\ythsi\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 423, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\ythsi\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'output\\June_Altek Medical/DL ACS_Report.xlsx'
+

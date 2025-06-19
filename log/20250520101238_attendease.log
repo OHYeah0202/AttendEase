@@ -1,0 +1,33 @@
+2025-05-20 10:12:39,219 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-20 10:12:39,461 - INFO - 📊️ Data Processing...
+2025-05-20 10:12:39,680 - INFO - 💾 Generating 8232001-Hsieh Yu Ting Worksheet...
+2025-05-20 10:12:39,802 - INFO - 💾 Generating 8232003-Muhammad Irfan bin Mohamad Worksheet...
+2025-05-20 10:12:39,922 - INFO - 💾 Generating 8232005-Siti Norhafiza binti Idris Worksheet...
+2025-05-20 10:12:39,936 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:12:39,937 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:12:39,939 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:12:39,940 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:12:39,940 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:12:39,941 - ERROR - ❌ An error occurred while executing the program！
+2025-05-20 10:12:39,945 - ERROR - Traceback (most recent call last):
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 346, in <module>
+    group['DAY TYPE'] = group.apply(auto_day_type, axis=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+           ^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 916, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\.venv\Lib\site-packages\pandas\core\apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ythsi\Pycharm\AttendanceProject\main.py", line 248, in auto_day_type
+    return 'OFF' if shift_code.strip().upper() == 'B1' else 'OT'  # IDL 周六排休 DL 周六加班
+                    ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+2025-05-20 10:12:48,312 - INFO - 💾 Saving in progress...Please be patient

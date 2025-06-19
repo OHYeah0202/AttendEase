@@ -1,0 +1,402 @@
+2025-05-20 10:28:16,032 - INFO - 📁 Reading masterdata.xlsx...
+2025-05-20 10:28:16,252 - INFO - 📊️ Data Processing...
+2025-05-20 10:28:16,439 - INFO - 💾 Generating 8232001-Hsieh Yu Ting Worksheet...
+2025-05-20 10:28:16,560 - INFO - 💾 Generating 8232003-Muhammad Irfan bin Mohamad Worksheet...
+2025-05-20 10:28:16,691 - INFO - 💾 Generating 8232005-Siti Norhafiza binti Idris Worksheet...
+2025-05-20 10:28:16,705 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,705 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-15 00:00:00
+2025-05-20 10:28:16,706 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,706 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-16 00:00:00
+2025-05-20 10:28:16,707 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,707 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-17 00:00:00
+2025-05-20 10:28:16,707 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,707 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-18 00:00:00
+2025-05-20 10:28:16,708 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,708 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-19 00:00:00
+2025-05-20 10:28:16,708 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,708 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-20 00:00:00
+2025-05-20 10:28:16,708 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,708 - WARNING - Cannot determine shift code for employee 8232006 on 2025-04-21 00:00:00
+2025-05-20 10:28:16,710 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,710 - WARNING - Missing shift code for employee 8232006 on 2025-04-15 00:00:00
+2025-05-20 10:28:16,710 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,710 - WARNING - Missing shift code for employee 8232006 on 2025-04-16 00:00:00
+2025-05-20 10:28:16,711 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,711 - WARNING - Missing shift code for employee 8232006 on 2025-04-17 00:00:00
+2025-05-20 10:28:16,711 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,711 - WARNING - Missing shift code for employee 8232006 on 2025-04-18 00:00:00
+2025-05-20 10:28:16,712 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,712 - WARNING - Missing shift code for employee 8232006 on 2025-04-19 00:00:00
+2025-05-20 10:28:16,712 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,712 - WARNING - Missing shift code for employee 8232006 on 2025-04-20 00:00:00
+2025-05-20 10:28:16,712 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,713 - WARNING - Missing shift code for employee 8232006 on 2025-04-21 00:00:00
+2025-05-20 10:28:16,724 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,724 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,725 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,725 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,726 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,726 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,726 - WARNING - Cannot find the shift information of employee 8232006, skip calculation
+2025-05-20 10:28:16,729 - INFO - 💾 Generating 8232006-Zoey Pok Worksheet...
+2025-05-20 10:28:16,739 - INFO - ⚠️ Employee ID: 8232006 can't be found in Master.xlsx
+2025-05-20 10:28:16,855 - INFO - 💾 Generating 8232010-Kwak Fang Wei Worksheet...
+2025-05-20 10:28:16,981 - INFO - 💾 Generating 8232011-Nurshuhaily Binti Zainisiam Worksheet...
+2025-05-20 10:28:17,111 - INFO - 💾 Generating 8232015-Nurul Iyiani binti Sazali Worksheet...
+2025-05-20 10:28:17,263 - INFO - 💾 Generating 8242001-Nurse Fatiha binti Hamzah Worksheet...
+2025-05-20 10:28:17,374 - INFO - 💾 Generating 8242003-Muhammad Khirrudin bin Mohamad Lassim Worksheet...
+2025-05-20 10:28:17,489 - INFO - 💾 Generating 8242005-Felicia Wong Worksheet...
+2025-05-20 10:28:17,609 - INFO - 💾 Generating 8242011-Siti Saleha Binti Alias Worksheet...
+2025-05-20 10:28:17,731 - INFO - 💾 Generating 8242012-Nur Najwa Atasha binti Muhamad Worksheet...
+2025-05-20 10:28:17,853 - INFO - 💾 Generating 8242013-Illayarani AP Moohan Worksheet...
+2025-05-20 10:28:17,964 - INFO - 💾 Generating 8242015-Norsyakiela binti Sini Worksheet...
+2025-05-20 10:28:18,080 - INFO - 💾 Generating 8242016-Nurul Ellya Izzati Worksheet...
+2025-05-20 10:28:18,202 - INFO - 💾 Generating 8242019-Siti Jahinah Binti Asmaul Worksheet...
+2025-05-20 10:28:18,307 - INFO - 💾 Generating 8242021-Nurul Syazwani Binti Haidi Worksheet...
+2025-05-20 10:28:18,426 - INFO - 💾 Generating 8242022-Meena Sabaratnam Worksheet...
+2025-05-20 10:28:18,559 - INFO - 💾 Generating 8242029-Suhaini Worksheet...
+2025-05-20 10:28:18,656 - INFO - 💾 Generating 8242031-Siti Nur Aisyah Worksheet...
+2025-05-20 10:28:18,785 - INFO - 💾 Generating 8242037-Siti Nurdiana Worksheet...
+2025-05-20 10:28:18,900 - INFO - 💾 Generating 8242040-Lia Natasha Worksheet...
+2025-05-20 10:28:18,911 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,911 - WARNING - Cannot determine shift code for employee 8242041 on 2025-04-15 00:00:00
+2025-05-20 10:28:18,911 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,911 - WARNING - Cannot determine shift code for employee 8242041 on 2025-04-16 00:00:00
+2025-05-20 10:28:18,911 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,912 - WARNING - Cannot determine shift code for employee 8242041 on 2025-04-17 00:00:00
+2025-05-20 10:28:18,912 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,912 - WARNING - Cannot determine shift code for employee 8242041 on 2025-04-18 00:00:00
+2025-05-20 10:28:18,912 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,912 - WARNING - Cannot determine shift code for employee 8242041 on 2025-04-19 00:00:00
+2025-05-20 10:28:18,912 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,913 - WARNING - Cannot determine shift code for employee 8242041 on 2025-04-20 00:00:00
+2025-05-20 10:28:18,913 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,913 - WARNING - Cannot determine shift code for employee 8242041 on 2025-04-21 00:00:00
+2025-05-20 10:28:18,914 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,914 - WARNING - Missing shift code for employee 8242041 on 2025-04-15 00:00:00
+2025-05-20 10:28:18,915 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,915 - WARNING - Missing shift code for employee 8242041 on 2025-04-16 00:00:00
+2025-05-20 10:28:18,915 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,915 - WARNING - Missing shift code for employee 8242041 on 2025-04-17 00:00:00
+2025-05-20 10:28:18,915 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,915 - WARNING - Missing shift code for employee 8242041 on 2025-04-18 00:00:00
+2025-05-20 10:28:18,916 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,916 - WARNING - Missing shift code for employee 8242041 on 2025-04-19 00:00:00
+2025-05-20 10:28:18,916 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,916 - WARNING - Missing shift code for employee 8242041 on 2025-04-20 00:00:00
+2025-05-20 10:28:18,916 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,916 - WARNING - Missing shift code for employee 8242041 on 2025-04-21 00:00:00
+2025-05-20 10:28:18,925 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,926 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,926 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,926 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,926 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,926 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,927 - WARNING - Cannot find the shift information of employee 8242041, skip calculation
+2025-05-20 10:28:18,929 - INFO - 💾 Generating 8242041-Siow Kian Hwa Worksheet...
+2025-05-20 10:28:18,938 - INFO - ⚠️ Employee ID: 8242041 can't be found in Master.xlsx
+2025-05-20 10:28:19,056 - INFO - 💾 Generating 8242042-Mohd Imann Worksheet...
+2025-05-20 10:28:19,170 - INFO - 💾 Generating 8242044-Chong Jing Yi Worksheet...
+2025-05-20 10:28:19,277 - INFO - 💾 Generating 8242047-Nurul Haziqah Worksheet...
+2025-05-20 10:28:19,385 - INFO - 💾 Generating 8242048-Nur'ain binti Muhamad Syarif Worksheet...
+2025-05-20 10:28:19,508 - INFO - 💾 Generating 8242054-Siti Nur Syahirah Worksheet...
+2025-05-20 10:28:19,521 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,522 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-15 00:00:00
+2025-05-20 10:28:19,522 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,522 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-16 00:00:00
+2025-05-20 10:28:19,523 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,523 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-17 00:00:00
+2025-05-20 10:28:19,523 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,523 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-18 00:00:00
+2025-05-20 10:28:19,524 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,524 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-19 00:00:00
+2025-05-20 10:28:19,524 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,524 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-20 00:00:00
+2025-05-20 10:28:19,525 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,525 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-21 00:00:00
+2025-05-20 10:28:19,525 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,525 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-22 00:00:00
+2025-05-20 10:28:19,525 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,526 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-23 00:00:00
+2025-05-20 10:28:19,526 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,526 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-24 00:00:00
+2025-05-20 10:28:19,526 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,527 - WARNING - Cannot determine shift code for employee 8242056 on 2025-04-25 00:00:00
+2025-05-20 10:28:19,529 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,529 - WARNING - Missing shift code for employee 8242056 on 2025-04-15 00:00:00
+2025-05-20 10:28:19,530 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,530 - WARNING - Missing shift code for employee 8242056 on 2025-04-16 00:00:00
+2025-05-20 10:28:19,530 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,530 - WARNING - Missing shift code for employee 8242056 on 2025-04-17 00:00:00
+2025-05-20 10:28:19,531 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,531 - WARNING - Missing shift code for employee 8242056 on 2025-04-18 00:00:00
+2025-05-20 10:28:19,531 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,531 - WARNING - Missing shift code for employee 8242056 on 2025-04-19 00:00:00
+2025-05-20 10:28:19,532 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,532 - WARNING - Missing shift code for employee 8242056 on 2025-04-20 00:00:00
+2025-05-20 10:28:19,532 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,532 - WARNING - Missing shift code for employee 8242056 on 2025-04-21 00:00:00
+2025-05-20 10:28:19,533 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,533 - WARNING - Missing shift code for employee 8242056 on 2025-04-22 00:00:00
+2025-05-20 10:28:19,533 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,533 - WARNING - Missing shift code for employee 8242056 on 2025-04-23 00:00:00
+2025-05-20 10:28:19,533 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,534 - WARNING - Missing shift code for employee 8242056 on 2025-04-24 00:00:00
+2025-05-20 10:28:19,534 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,534 - WARNING - Missing shift code for employee 8242056 on 2025-04-25 00:00:00
+2025-05-20 10:28:19,549 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,550 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,550 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,551 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,551 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,551 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,552 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,552 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,552 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,553 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,553 - WARNING - Cannot find the shift information of employee 8242056, skip calculation
+2025-05-20 10:28:19,556 - INFO - 💾 Generating 8242056-Nurul Shafira Worksheet...
+2025-05-20 10:28:19,567 - INFO - ⚠️ Employee ID: 8242056 can't be found in Master.xlsx
+2025-05-20 10:28:19,666 - INFO - 💾 Generating 8242063-Kamaliah Worksheet...
+2025-05-20 10:28:19,781 - INFO - 💾 Generating 8242064-Jepren Worksheet...
+2025-05-20 10:28:19,895 - INFO - 💾 Generating 8242067-Li Pei Chi Worksheet...
+2025-05-20 10:28:20,008 - INFO - 💾 Generating 8242069-Lim Chu Yan Worksheet...
+2025-05-20 10:28:20,101 - INFO - 💾 Generating 8242073-Punitha Worksheet...
+2025-05-20 10:28:20,212 - INFO - 💾 Generating 8242083-Azura Worksheet...
+2025-05-20 10:28:20,309 - INFO - 💾 Generating 8242085-Nur Aini Worksheet...
+2025-05-20 10:28:20,418 - INFO - 💾 Generating 8242086-Nor Fazilah Worksheet...
+2025-05-20 10:28:20,431 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,431 - WARNING - Cannot determine shift code for employee 8242089 on 2025-04-15 00:00:00
+2025-05-20 10:28:20,432 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,432 - WARNING - Cannot determine shift code for employee 8242089 on 2025-04-16 00:00:00
+2025-05-20 10:28:20,432 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,432 - WARNING - Cannot determine shift code for employee 8242089 on 2025-04-17 00:00:00
+2025-05-20 10:28:20,433 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,433 - WARNING - Cannot determine shift code for employee 8242089 on 2025-04-18 00:00:00
+2025-05-20 10:28:20,433 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,433 - WARNING - Cannot determine shift code for employee 8242089 on 2025-04-19 00:00:00
+2025-05-20 10:28:20,434 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,434 - WARNING - Cannot determine shift code for employee 8242089 on 2025-04-20 00:00:00
+2025-05-20 10:28:20,434 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,434 - WARNING - Cannot determine shift code for employee 8242089 on 2025-04-21 00:00:00
+2025-05-20 10:28:20,436 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,436 - WARNING - Missing shift code for employee 8242089 on 2025-04-15 00:00:00
+2025-05-20 10:28:20,436 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,437 - WARNING - Missing shift code for employee 8242089 on 2025-04-16 00:00:00
+2025-05-20 10:28:20,437 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,437 - WARNING - Missing shift code for employee 8242089 on 2025-04-17 00:00:00
+2025-05-20 10:28:20,438 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,438 - WARNING - Missing shift code for employee 8242089 on 2025-04-18 00:00:00
+2025-05-20 10:28:20,438 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,438 - WARNING - Missing shift code for employee 8242089 on 2025-04-19 00:00:00
+2025-05-20 10:28:20,438 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,438 - WARNING - Missing shift code for employee 8242089 on 2025-04-20 00:00:00
+2025-05-20 10:28:20,440 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,440 - WARNING - Missing shift code for employee 8242089 on 2025-04-21 00:00:00
+2025-05-20 10:28:20,450 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,451 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,451 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,452 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,452 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,452 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,453 - WARNING - Cannot find the shift information of employee 8242089, skip calculation
+2025-05-20 10:28:20,455 - INFO - 💾 Generating 8242089-Ooi Chin Kent Worksheet...
+2025-05-20 10:28:20,466 - INFO - ⚠️ Employee ID: 8242089 can't be found in Master.xlsx
+2025-05-20 10:28:20,561 - INFO - 💾 Generating 8242100-Aziela Worksheet...
+2025-05-20 10:28:20,673 - INFO - 💾 Generating 8242102-Nur atika Worksheet...
+2025-05-20 10:28:20,834 - INFO - 💾 Generating 8242104-Nur Syazana Worksheet...
+2025-05-20 10:28:20,874 - INFO - 💾 Generating 8242106-Lim Song Keong Worksheet...
+2025-05-20 10:28:20,993 - INFO - 💾 Generating 8242107-Mohamad Shahzwan Worksheet...
+2025-05-20 10:28:21,113 - INFO - 💾 Generating 8242109-Nur Hafiza Worksheet...
+2025-05-20 10:28:21,205 - INFO - 💾 Generating 8242111-Naim Muizzuddin bin Mohamad Sah Worksheet...
+2025-05-20 10:28:21,316 - INFO - 💾 Generating 8242112-Yvonne Tan Worksheet...
+2025-05-20 10:28:21,404 - INFO - 💾 Generating 8242113-Celine Woon Worksheet...
+2025-05-20 10:28:21,416 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,416 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-15 00:00:00
+2025-05-20 10:28:21,416 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,416 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-16 00:00:00
+2025-05-20 10:28:21,418 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,418 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-17 00:00:00
+2025-05-20 10:28:21,418 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,418 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-18 00:00:00
+2025-05-20 10:28:21,418 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,418 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-19 00:00:00
+2025-05-20 10:28:21,419 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,419 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-20 00:00:00
+2025-05-20 10:28:21,419 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,419 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-21 00:00:00
+2025-05-20 10:28:21,420 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,420 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-24 00:00:00
+2025-05-20 10:28:21,420 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,420 - WARNING - Cannot determine shift code for employee 8242114 on 2025-04-25 00:00:00
+2025-05-20 10:28:21,422 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,422 - WARNING - Missing shift code for employee 8242114 on 2025-04-15 00:00:00
+2025-05-20 10:28:21,422 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,423 - WARNING - Missing shift code for employee 8242114 on 2025-04-16 00:00:00
+2025-05-20 10:28:21,423 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,423 - WARNING - Missing shift code for employee 8242114 on 2025-04-17 00:00:00
+2025-05-20 10:28:21,423 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,423 - WARNING - Missing shift code for employee 8242114 on 2025-04-18 00:00:00
+2025-05-20 10:28:21,424 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,424 - WARNING - Missing shift code for employee 8242114 on 2025-04-19 00:00:00
+2025-05-20 10:28:21,424 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,424 - WARNING - Missing shift code for employee 8242114 on 2025-04-20 00:00:00
+2025-05-20 10:28:21,425 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,425 - WARNING - Missing shift code for employee 8242114 on 2025-04-21 00:00:00
+2025-05-20 10:28:21,425 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,425 - WARNING - Missing shift code for employee 8242114 on 2025-04-24 00:00:00
+2025-05-20 10:28:21,425 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,425 - WARNING - Missing shift code for employee 8242114 on 2025-04-25 00:00:00
+2025-05-20 10:28:21,438 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,439 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,439 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,439 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,440 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,440 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,440 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,441 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,441 - WARNING - Cannot find the shift information of employee 8242114, skip calculation
+2025-05-20 10:28:21,443 - INFO - 💾 Generating 8242114-Nur Filzaamirah Worksheet...
+2025-05-20 10:28:21,454 - INFO - ⚠️ Employee ID: 8242114 can't be found in Master.xlsx
+2025-05-20 10:28:21,551 - INFO - 💾 Generating 8242115-Nicholas Mark Netto Worksheet...
+2025-05-20 10:28:21,670 - INFO - 💾 Generating 8242116-Tan Teck Loon Worksheet...
+2025-05-20 10:28:21,789 - INFO - 💾 Generating 8242118-Siti Nur Natasyah Worksheet...
+2025-05-20 10:28:21,881 - INFO - 💾 Generating 8242119-Nurul Syazwani binti Azmi Worksheet...
+2025-05-20 10:28:21,991 - INFO - 💾 Generating 8242120-Noor Hakim bin Osman Worksheet...
+2025-05-20 10:28:22,111 - INFO - 💾 Generating 8242121-M amirul Worksheet...
+2025-05-20 10:28:22,233 - INFO - 💾 Generating 8252001-Muhammad Sahrilzani Worksheet...
+2025-05-20 10:28:22,346 - INFO - 💾 Generating 8252002-Yogeswari Worksheet...
+2025-05-20 10:28:22,444 - INFO - 💾 Generating 8252003-Nurul Izzah Worksheet...
+2025-05-20 10:28:22,552 - INFO - 💾 Generating 8252004-Deniswari Worksheet...
+2025-05-20 10:28:22,663 - INFO - 💾 Generating 8252005-Nornabilah Worksheet...
+2025-05-20 10:28:22,762 - INFO - 💾 Generating 8252009-Qurratul Aini Worksheet...
+2025-05-20 10:28:22,876 - INFO - 💾 Generating 8252010-Nurul Fatihah Worksheet...
+2025-05-20 10:28:22,977 - INFO - 💾 Generating 8252011-Siti Nur Nabilah Binti Mohd Rais Worksheet...
+2025-05-20 10:28:23,082 - INFO - 💾 Generating 8252012-mohd rizal Worksheet...
+2025-05-20 10:28:23,193 - INFO - 💾 Generating 8252013-Khidir Thong Worksheet...
+2025-05-20 10:28:23,299 - INFO - 💾 Generating 8252014-Mohd Aliffazwan Worksheet...
+2025-05-20 10:28:23,406 - INFO - 💾 Generating 8252015-Nur Farah Najihah Worksheet...
+2025-05-20 10:28:23,526 - INFO - 💾 Generating 8252016-Yaseil Worksheet...
+2025-05-20 10:28:23,640 - INFO - 💾 Generating 8252017-Wong Si Huey Worksheet...
+2025-05-20 10:28:23,656 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,656 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-15 00:00:00
+2025-05-20 10:28:23,656 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,657 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-16 00:00:00
+2025-05-20 10:28:23,657 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,657 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-17 00:00:00
+2025-05-20 10:28:23,657 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,657 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-18 00:00:00
+2025-05-20 10:28:23,658 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,658 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-19 00:00:00
+2025-05-20 10:28:23,658 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,658 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-20 00:00:00
+2025-05-20 10:28:23,659 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,659 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-21 00:00:00
+2025-05-20 10:28:23,659 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,659 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-22 00:00:00
+2025-05-20 10:28:23,660 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,660 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-23 00:00:00
+2025-05-20 10:28:23,660 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,660 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-24 00:00:00
+2025-05-20 10:28:23,661 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,661 - WARNING - Cannot determine shift code for employee 8252019 on 2025-04-25 00:00:00
+2025-05-20 10:28:23,663 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,663 - WARNING - Missing shift code for employee 8252019 on 2025-04-15 00:00:00
+2025-05-20 10:28:23,663 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,663 - WARNING - Missing shift code for employee 8252019 on 2025-04-16 00:00:00
+2025-05-20 10:28:23,663 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,663 - WARNING - Missing shift code for employee 8252019 on 2025-04-17 00:00:00
+2025-05-20 10:28:23,664 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,664 - WARNING - Missing shift code for employee 8252019 on 2025-04-18 00:00:00
+2025-05-20 10:28:23,664 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,664 - WARNING - Missing shift code for employee 8252019 on 2025-04-19 00:00:00
+2025-05-20 10:28:23,665 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,665 - WARNING - Missing shift code for employee 8252019 on 2025-04-20 00:00:00
+2025-05-20 10:28:23,665 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,665 - WARNING - Missing shift code for employee 8252019 on 2025-04-21 00:00:00
+2025-05-20 10:28:23,665 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,665 - WARNING - Missing shift code for employee 8252019 on 2025-04-22 00:00:00
+2025-05-20 10:28:23,666 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,666 - WARNING - Missing shift code for employee 8252019 on 2025-04-23 00:00:00
+2025-05-20 10:28:23,984 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,985 - WARNING - Missing shift code for employee 8252019 on 2025-04-24 00:00:00
+2025-05-20 10:28:23,985 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,985 - WARNING - Missing shift code for employee 8252019 on 2025-04-25 00:00:00
+2025-05-20 10:28:23,997 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,999 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,999 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:23,999 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,000 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,000 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,000 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,000 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,001 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,001 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,001 - WARNING - Cannot find the shift information of employee 8252019, skip calculation
+2025-05-20 10:28:24,004 - INFO - 💾 Generating 8252019-Alia Worksheet...
+2025-05-20 10:28:24,012 - INFO - ⚠️ Employee ID: 8252019 can't be found in Master.xlsx
+2025-05-20 10:28:24,014 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,014 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-15 00:00:00
+2025-05-20 10:28:24,014 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,014 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-16 00:00:00
+2025-05-20 10:28:24,015 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,015 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-17 00:00:00
+2025-05-20 10:28:24,015 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,015 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-18 00:00:00
+2025-05-20 10:28:24,015 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,015 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-19 00:00:00
+2025-05-20 10:28:24,016 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,016 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-20 00:00:00
+2025-05-20 10:28:24,016 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,016 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-21 00:00:00
+2025-05-20 10:28:24,016 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,016 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-22 00:00:00
+2025-05-20 10:28:24,016 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,016 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-23 00:00:00
+2025-05-20 10:28:24,018 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,018 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-24 00:00:00
+2025-05-20 10:28:24,018 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,018 - WARNING - Cannot determine shift code for employee 8252020 on 2025-04-25 00:00:00
+2025-05-20 10:28:24,020 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,020 - WARNING - Missing shift code for employee 8252020 on 2025-04-15 00:00:00
+2025-05-20 10:28:24,020 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,020 - WARNING - Missing shift code for employee 8252020 on 2025-04-16 00:00:00
+2025-05-20 10:28:24,021 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,021 - WARNING - Missing shift code for employee 8252020 on 2025-04-17 00:00:00
+2025-05-20 10:28:24,021 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,021 - WARNING - Missing shift code for employee 8252020 on 2025-04-18 00:00:00
+2025-05-20 10:28:24,022 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,022 - WARNING - Missing shift code for employee 8252020 on 2025-04-19 00:00:00
+2025-05-20 10:28:24,022 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,022 - WARNING - Missing shift code for employee 8252020 on 2025-04-20 00:00:00
+2025-05-20 10:28:24,022 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,022 - WARNING - Missing shift code for employee 8252020 on 2025-04-21 00:00:00
+2025-05-20 10:28:24,023 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,023 - WARNING - Missing shift code for employee 8252020 on 2025-04-22 00:00:00
+2025-05-20 10:28:24,023 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,023 - WARNING - Missing shift code for employee 8252020 on 2025-04-23 00:00:00
+2025-05-20 10:28:24,023 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,024 - WARNING - Missing shift code for employee 8252020 on 2025-04-24 00:00:00
+2025-05-20 10:28:24,024 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,024 - WARNING - Missing shift code for employee 8252020 on 2025-04-25 00:00:00
+2025-05-20 10:28:24,038 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,039 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,039 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,039 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,040 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,040 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,040 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,041 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,041 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,041 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,041 - WARNING - Cannot find the shift information of employee 8252020, skip calculation
+2025-05-20 10:28:24,044 - INFO - 💾 Generating 8252020-Sarrohjini Ap Sathiamoorty Worksheet...
+2025-05-20 10:28:24,053 - INFO - ⚠️ Employee ID: 8252020 can't be found in Master.xlsx
+2025-05-20 10:28:24,154 - INFO - 💾 Generating 8252021-Hemalatha AP Shankar Worksheet...
+2025-05-20 10:28:24,250 - INFO - 💾 Generating 8252022-Reethaa AP Prakashkumar Worksheet...
+2025-05-20 10:28:24,389 - INFO - 💾 Generating 8252023-Nor Aslinda Worksheet...
+2025-05-20 10:28:24,470 - INFO - 💾 Generating 8252024-Nurshahirah Binti Mohamed Salleh Worksheet...
+2025-05-20 10:28:24,526 - INFO - 💾 Generating 8252025-Nur Izni Najwa Worksheet...
+2025-05-20 10:28:24,587 - INFO - 💾 Generating 8252026-Noor Lia Worksheet...
+2025-05-20 10:28:24,618 - INFO - 💾 Generating 8252027-Umu Salamah Worksheet...
+2025-05-20 10:28:24,627 - INFO - 💾 Saving in progress...Please be patient
