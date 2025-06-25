@@ -1,50 +1,79 @@
-考勤統計自動化腳本使用說明
-版本：2.2
+AttendEase 勤易算
+版本：3.0
 作者：YTHsieh
-日期：2025-05-20
 
 【📌 目的】  
-本腳本自動化統計公司員工的每月考勤資料，根據部門自動區分直接人員 (DL) 與間接人員 (IDL)，並統計加班時數（OT 1.5、OT 2.0、OT 3.0）、缺勤、遲到早退等項目，同時將資料寫入標準模板報表中。
+這是一個自動化考勤資料處理系統，能夠讀取Excel格式的考勤資料，並自動計算工作時數、加班時數、遲到早退等統計資訊，最終生成詳細的考勤報表。
 
-【使用方式】
-1. 請將 Excel 檔案命名 masterdata.xlsx 並命名 Excel 表為：
-   ➤ `Employee`: 所有員工資料
-   ➤ `Holiday`: 公共假日及周六不加班資料 
-   ➤ `Attendance`: 考勤打卡資料 
-   ➤ `Leave`: 請假記錄資料
-   ➤ `Meal`: 餐費津貼資料
-   並放置於 `data/`資料夾内。
+【功能特色】
+- 🕐 自動計算工作時數和加班時數
+- 📊 統計遲到、早退、忘記打卡等異常情況
+- 📋 支援多種班別規則 (A1, A2, B1)
+- 🏢 按部門分組生成報表
+- 📈 生成個人和主報表
+- 🍽️ 計算午餐津貼
+- 🎯 自動判斷工作日類型 (工作日/假日/加班日)
+- 📝 完整的日誌記錄功能
 
-2. 確認範本檔 `employee_report_template.xlsx` `master_report_template.xlsx` 存在於 `template/` 資料夾内，樣式將會自動複製到新報表中。
+【資料檔案格式】
+主要資料檔案 `masterdata.xlsx` 必須包含以下工作表：
+- Employee: 員工基本資料
+- Attendance: 考勤打卡記錄
+- Leave: 請假記錄
+- Holiday: 假期設定
+- Meal: 午餐津貼記錄
+- Manual OT: 手動加班記錄
 
-3. 執行主腳本檔案：
-   ➤ `main_v2.2.exe`
+【班別規則】
+系統支援三種班別：
+- A1: 07:40-18:40 (休息時間1.83小時)
+- A2: 07:40-18:40 (週五至19:40，休息時間1.83小時)
+- B1: 08:00-18:00 (休息時間1小時)
 
-4. 程式將依據以下規則分類、計算與輸出考勤結果，並將統計結果寫入報表中。
+【使用方法】
+1. 將考勤資料放入 `data/masterdata.xlsx`
+2. 確保模板檔案存在於 `template/` 資料夾
+3. 執行程式：
+   ```
+   python main.py
+   ```
+4. 處理完成後，報表將生成在 `output/` 資料夾
 
-【規則說明】
-1. 🕒 **出勤時段區分**
-   - A1：上班時間為 07:50～18:40（含 1 小時 50 分鐘休息）
-   -  A2: 上班時間為 07:50～18:40（含 1 小時 50 分鐘休息），周五上班時間為 07:50 ~ 19:40（含 1 小時 50 分鐘休息）
-   - B1: 間接人員：上班時間為 08:00～18:00（含 1 小時休息）
-   - 透過 masterdata.xlsx --> Employee Excel 表 `Shift` 欄位判斷
+【輸出報表】
+- 按部門分類的詳細考勤報表
+- 主報表 (Master_Report.xlsx) 包含所有員工統計
+- 包含週統計和月統計資料
+- 自動標記異常情況（遲到、早退、忘記打卡等）
 
-2. **加班時數計算（以每 30 分鐘為單位，不足者不計）：**
-   - OT 1.5：平日的加班時間
-   - OT 2.0：星期日、或國定假日前 8 小時
-   - OT 3.0：國定假日超過 8 小時部分
+【統計項目】
+- 遲到次數和分鐘數
+- 早退次數和分鐘數
+- 忘記打卡次數
+- 缺勤天數
+- 工作時數
+- 加班時數 (1.5倍、2倍、3倍)
+- 請假天數
+- 午餐津貼
+- 手動加班時數
 
-3. 🚫 **缺勤與異常類型統計**  
-   - 曠職（ABSENT）
-   - 請假（LVE DAYS）
-   - 遲到（LATE IN） / 早退（EARLY OUT）
-   - 忘打卡、不可加班等（FORGOT CLOCKING、CANNOT OT）
+【日誌記錄】
+系統會自動記錄處理過程：
+- 日誌檔案位置：`log/` 資料夾
+- 檔案命名格式：`YYYYMMDDHHMMSS_attendease.log`
+- 包含處理進度、錯誤訊息等詳細資訊
 
-4. 🧾 **報表輸出格式**  
-   程式將於 `output/` 資料夾內輸出以下兩份 Excel 報表：
-   ➤ `[Month]_Employees_Report.xlsx`：個別員工考勤統計  
-   ➤ `Master_Report.xlsx`：總表，含員工基本資料與統計資料 
-   - 所有資料將自動套用範本樣式  
+【注意事項】
+1. 請確保 Excel 檔案格式正確，欄位名稱與系統要求一致
+2. 時間格式應為標準時間格式 (HH:MM)
+3. 日期格式應為標準日期格式 (YYYY-MM-DD)
+4. 員工ID必須為唯一值
+5. 處理大量資料時請耐心等待
+
+【錯誤排除】
+- 如果程式執行時出現錯誤，請檢查 log 資料夾中的日誌檔案
+- 確認資料檔案格式是否正確
+- 檢查模板檔案是否存在
+- 確認所有必要資料夾已建立
 
 【⚠️ 注意事項】 
 - 請勿修改 Excel 模板格式與欄位名稱，以避免分析錯誤。
@@ -52,79 +81,14 @@
 - 加班時數僅供人資部門內部參考，實際薪資請依公司核算標準為準。
 - 若需加入其他考勤類別或修改計算邏輯，請聯絡開發者進行擴充。
 
+【版本資訊】
+- 開發環境：PyCharm 2025.1.2
+- Python版本：3.12.0
+- 作業系統：Windows 11 (amd64)
+
 【📨 聯絡方式】
 如有任何問題，歡迎聯絡 YTHsieh
 Email: ythsieh@altekmed.com.my
 
-Attendance Statistics Automation Script User Guide
-
-Version: 2.2
-Author: YTHsieh
-Date: 2025-05-20
-
-
-📌 Purpose
-This script automates the monthly attendance statistics for company employees. It classifies employees into Direct Labor (DL) and Indirect Labor (IDL) based on department, calculates overtime hours (OT 1.5, OT 2.0, OT 3.0), absences, lateness/early leave, and writes the results into standardized report templates.
-
-
-How to Use
-
-1. Prepare a single Excel file named masterdata.xlsx, and make sure it contains the following sheets:
-➤ Employee: Employee master data
-➤ Holiday: Public holidays and Saturdays without overtime
-➤ Attendance: Attendance clock-in/out records
-➤ Leave: Leave records
-➤ Meal: Meal allowance data
-Place this file inside the data/ folder.
-
-2. Ensure the following template files exist in the template/ folder:
-➤ employee_report_template.xlsx
-➤ master_report_template.xlsx
-These templates will be used to style the output reports.
-
-3. Run the main script executable:
-➤ main_v2.2.exe
-
-4. The program will classify, calculate, and output attendance results based on the following rules, and write them into formatted reports.
-
-
-Rules Description
-
-1. 🕒 Shift Classification
-· A1: 07:50–18:40 (including 1 hour 50 minutes break)
-· A2: 07:50–18:40 (including 1 hour 50 minutes break); on Fridays: 07:50–19:40
-· B1: 08:00–18:00 (including 1 hour break)
-Shift type is determined from the Shift column in the Employee sheet.
-
-2. ⏱️ Overtime Calculation (in 30-minute blocks; under 30 minutes not counted):
-· OT 1.5: Weekday overtime
-· OT 2.0: Sundays and the first 8 hours on public holidays
-· OT 3.0: Hours exceeding 8 on public holidays
-
-3. 🚫 Absence and Exception Tracking
-· ABSENT: Unexcused absence
-· LVE DAYS: Official leave
-· LATE IN / EARLY OUT: Lateness and early departure
-· FORGOT CLOCKING / CANNOT OT: Missed punch-in/out, overtime not allowed
-
-4. 🧾 Report Output
-The following Excel reports will be generated in the output/ folder:
-➤ [Month]_Employees_Report.xlsx: Individual employee attendance summary
-➤ Master_Report.xlsx: Consolidated report including employee data and statistics
-All data will be automatically styled using the provided templates
-
-
-⚠️ Notes
-
-· Do not alter the Excel template column names to avoid processing errors.
-
-· Ensure leave and overtime records are filled correctly in the corresponding sheets to prevent omissions.
-
-· Overtime statistics are for internal HR reference only; actual payroll should follow company policies.
-
-· For adding new attendance categories or modifying calculation logic, please contact the developer.
-
-
-📨 Contact
-For any inquiries, feel free to contact YTHsieh
-Email: ythsieh@altekmed.com.my
+------------------------------
+最後更新：2025年6月
