@@ -86,8 +86,25 @@ class AttendanceProcessor:
 
     def load_excel_file(self, filename: str) -> Dict[str, pd.DataFrame]:
         """載入Excel檔案"""
-        path = Path(self.base_path) / 'data' / filename
-        return pd.read_excel(path, sheet_name=None)
+        try:
+            path = Path(self.base_path) / 'data' / filename
+            if not path.exists():
+                raise FileNotFoundError(f"檔案不存在: {path}")
+
+            return pd.read_excel(path, sheet_name=None)
+
+        except FileNotFoundError as e:
+            self.logger.error(f"檔案載入失敗: {e}")
+            raise
+        except PermissionError as e:
+            self.logger.error(f"檔案權限不足: {e}")
+            raise
+        except pd.errors.EmptyDataError as e:
+            self.logger.error(f"Excel檔案為空: {e}")
+            raise
+        except Exception as e:
+            self.logger.error(f"未預期的錯誤: {e}")
+            raise
 
     def calc_late(self, row: Series) -> Union[str, int]:
         """計算遲到分鐘數"""
@@ -639,13 +656,17 @@ def main():
     """主程式入口"""
     processor = AttendanceProcessor()
 
-    for step in tqdm(range(2), desc="🚀 處理中..."):
-        if step == 0:
-            processor._load_data()
-        elif step == 1:
-            processor._process_attendance_data()
+    try:
+        for step in tqdm(range(2), desc="🚀 處理中..."):
+            if step == 0:
+                processor._load_data()
+            elif step == 1:
+                processor._process_attendance_data()
 
-    processor._show_completion_message()
+        processor._show_completion_message()
+    except Exception as e:
+        processor.logger.exception(f"異常錯誤: {e}")
+        raise
 
 
 if __name__ == "__main__":
