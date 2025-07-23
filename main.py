@@ -5,7 +5,9 @@ import traceback
 from datetime import datetime, time, timedelta
 from typing import Dict, Any, Optional, Union
 from pathlib import Path
+from xmlrpc.client import DateTime
 
+import numpy as np
 import pandas as pd
 import tkinter as tk
 from tkinter import messagebox
@@ -111,10 +113,16 @@ class AttendanceProcessor:
         if pd.isna(row['Clock-in']):
             return "-"
 
-        idl_work_start = time(8, 0)
-        if row['Clock-in'] > idl_work_start and row['DAY TYPE'] in ['WORK', 'OT']:
+        shift_code = self.map_shift(row)
+        shift_info = self.shift_rules.get(shift_code)
+
+        if not shift_info:
+            return "-"
+
+        work_start = shift_info['start']
+        if row['Clock-in'] > work_start and row['DAY TYPE'] in ['WORK', 'OT']:
             late_min = (datetime.combine(datetime.today(), row['Clock-in']) -
-                        datetime.combine(datetime.today(), idl_work_start)).seconds // 60
+                        datetime.combine(datetime.today(), work_start)).seconds // 60
             return late_min
         return "-"
 
@@ -123,9 +131,15 @@ class AttendanceProcessor:
         if pd.isna(row['Clock-out']):
             return "-"
 
-        idl_work_end = time(18, 0)
-        if row['Clock-out'] < idl_work_end and row['DAY TYPE'] in ['WORK', 'OT']:
-            return (datetime.combine(datetime.today(), idl_work_end) -
+        shift_code = self.map_shift(row)
+        shift_info = self.shift_rules.get(shift_code)
+
+        if not shift_info:
+            return "-"
+
+        work_end = time(18, 0)
+        if row['Clock-out'] < work_end and row['DAY TYPE'] in ['WORK', 'OT']:
+            return (datetime.combine(datetime.today(), work_end) -
                     datetime.combine(datetime.today(), row['Clock-out'])).seconds // 60
         return "-"
 
@@ -214,6 +228,12 @@ class AttendanceProcessor:
             return None
         return emp_info.iloc[0]['Department']
 
+    def map_leave_date(self, row: Series) -> Optional[str]:
+        emp_info = self.employee_df.loc[self.employee_df['Employee ID'] == row['Employee ID']]
+        if emp_info.empty:
+            return None
+        leave_date = pd.to_datetime(emp_info.iloc[0]['Leave date'], format='%Y-%m-%d', errors='coerce')
+        return leave_date.strftime('%Y-%m-%d') if pd.notna(leave_date) else None
 
     def map_leave(self, row: Series) -> str:
         """映射請假資料"""
@@ -431,6 +451,7 @@ class AttendanceProcessor:
         group['ABSENT'] = group.apply(self._calc_absent, axis=1)
         group['DEPARTMENT'] = group.apply(self.map_dept, axis=1)
         group['SHIFT'] = group.apply(self.map_shift, axis=1)
+        group['LEAVE DATE'] = group.apply(self.map_leave_date, axis=1)
         group['MEAL'] = group.apply(self.map_meal, axis=1)
         group['MANUAL OT'] = group.apply(self.map_manual_ot, axis=1)
 
@@ -530,7 +551,7 @@ class AttendanceProcessor:
              self.monthly_counters['OT_HOURS']],
             ["MANUAL CLOCKING", "", "", "", "", "", "MANUAL OT HRS",
              round(self.monthly_counters['MANUAL_OT'] / 60, 2)],
-            ["", "", "", "", "", "", "CANNOT OT", ""]
+            ["", "", "", "", "", "", "CANNOT OT", "", "", "", "", "", "", "", "", "", group.iloc[0]["LEAVE DATE"]]
         ]
 
         employee_info = [
