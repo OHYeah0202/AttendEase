@@ -5,9 +5,7 @@ import traceback
 from datetime import datetime, time, timedelta
 from typing import Dict, Any, Optional, Union
 from pathlib import Path
-from xmlrpc.client import DateTime
 
-import numpy as np
 import pandas as pd
 import tkinter as tk
 from tkinter import messagebox
@@ -73,11 +71,11 @@ class AttendanceProcessor:
         """取得班別規則"""
         return {
             'A1': {
-                'start': time(7, 40), 'end': time(18, 40),
+                'start': time(7, 50), 'end': time(18, 40),
                 'break': 0.83 + 0.67 + 0.33, 'friday_end': time(18, 40)
             },
             'A2': {
-                'start': time(7, 40), 'end': time(18, 40),
+                'start': time(7, 50), 'end': time(18, 40),
                 'break': 0.83 + 0.67 + 0.33, 'friday_end': time(19, 40)
             },
             'B1': {
@@ -123,7 +121,7 @@ class AttendanceProcessor:
         if row['Clock-in'] > work_start and row['DAY TYPE'] in ['WORK', 'OT']:
             late_min = (datetime.combine(datetime.today(), row['Clock-in']) -
                         datetime.combine(datetime.today(), work_start)).seconds // 60
-            return late_min
+            return late_min if late_min > 0 else "-"
         return "-"
 
     def calc_early(self, row: Series) -> Union[str, int]:
@@ -137,7 +135,7 @@ class AttendanceProcessor:
         if not shift_info:
             return "-"
 
-        work_end = time(18, 0)
+        work_end = shift_info['end']
         if row['Clock-out'] < work_end and row['DAY TYPE'] in ['WORK', 'OT']:
             return (datetime.combine(datetime.today(), work_end) -
                     datetime.combine(datetime.today(), row['Clock-out'])).seconds // 60
