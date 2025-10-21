@@ -71,17 +71,21 @@ class AttendanceProcessor:
         """取得班別規則"""
         return {
             'A1': {
-                'start': time(7, 50), 'end': time(18, 40),
-                'break': 0.83 + 0.67 + 0.33, 'friday_end': time(18, 40)
+                'start': time(8, 00), 'end': time(18, 00),
+                'break': 1.0, 'friday_end': time(18, 00)
             },
             'A2': {
-                'start': time(7, 50), 'end': time(18, 40),
-                'break': 0.83 + 0.67 + 0.33, 'friday_end': time(19, 40)
+                'start': time(8, 00), 'end': time(18, 00),
+                'break': 1.0, 'friday_end': time(19, 30)
             },
             'B1': {
-                'start': time(8, 0), 'end': time(18, 0),
+                'start': time(8, 00), 'end': time(18, 00),
                 'break': 1.0, 'friday_end': None
-            }
+            },
+            'C1': {
+                'start': time(20, 00), 'end': time(6, 00),
+                'break': 1.0, 'friday_end': None
+            },
         }
 
     def load_excel_file(self, filename: str) -> Dict[str, pd.DataFrame]:
@@ -108,116 +112,221 @@ class AttendanceProcessor:
 
     def calc_late(self, row: Series) -> Union[str, int]:
         """計算遲到分鐘數"""
-        if pd.isna(row['Clock-in']):
+        if pd.isna(row['Clock-in']) or row['DAY TYPE'] not in ['WORK', 'OT']:
             return "-"
 
-        shift_code = self.map_shift(row)
-        shift_info = self.shift_rules.get(shift_code)
-
+        shift_info = self.shift_rules.get(self.map_shift(row))
         if not shift_info:
             return "-"
 
-        work_start = shift_info['start']
-        if row['Clock-in'] > work_start and row['DAY TYPE'] in ['WORK', 'OT']:
-            late_min = (datetime.combine(datetime.today(), row['Clock-in']) -
-                        datetime.combine(datetime.today(), work_start)).seconds // 60
-            return late_min if late_min > 0 else "-"
+        scheduled_start = shift_info['start']
+        clock_in = row['Clock-in']
+
+        # Create datetime objects for comparison, using the date from the row
+        start_dt = datetime.combine(row['Date'], scheduled_start)
+        clock_in_dt = datetime.combine(row['Date'], clock_in)
+
+        # Handle night shifts where clock-in might be on the next calendar day
+        if scheduled_start > shift_info['end'] and clock_in < scheduled_start:
+            # If clock-in is before the end time, it's on the next day
+            if clock_in < shift_info['end']:
+                clock_in_dt += timedelta(days=1)
+            # Otherwise, it's an early clock-in on the same day, so not late
+            else:
+                return "-"
+
+        if clock_in_dt > start_dt:
+            late_seconds = (clock_in_dt - start_dt).total_seconds()
+            # Sanity check: if more than 8 hours late, it's likely an error or absence
+            if late_seconds > 8 * 3600:
+                return "-"
+            late_minutes = int(late_seconds // 60)
+            return late_minutes if late_minutes > 0 else "-"
+
         return "-"
 
     def calc_early(self, row: Series) -> Union[str, int]:
         """計算早退分鐘數"""
-        if pd.isna(row['Clock-out']):
+        if pd.isna(row['Clock-out']) or row['DAY TYPE'] not in ['WORK', 'OT']:
             return "-"
 
-        shift_code = self.map_shift(row)
-        shift_info = self.shift_rules.get(shift_code)
-
+        shift_info = self.shift_rules.get(self.map_shift(row))
         if not shift_info:
             return "-"
 
-        work_end = shift_info['end']
-        if row['Clock-out'] < work_end and row['DAY TYPE'] in ['WORK', 'OT']:
-            return (datetime.combine(datetime.today(), work_end) -
-                    datetime.combine(datetime.today(), row['Clock-out'])).seconds // 60
+        scheduled_start = shift_info['start']
+        scheduled_end = shift_info['end']
+        clock_out = row['Clock-out']
+
+        # Create datetime objects for comparison, using the date from the row
+        end_dt = datetime.combine(row['Date'], scheduled_end)
+        clock_out_dt = datetime.combine(row['Date'], clock_out)
+
+        # Handle night shifts
+        if scheduled_start > scheduled_end:
+            end_dt += timedelta(days=1)
+            # If clock-out is on the same day as the shift start (before midnight)
+            if clock_out > scheduled_start:
+                pass  # clock_out_dt is correct
+            # If clock-out is on the next day (after midnight)
+            else:
+                clock_out_dt += timedelta(days=1)
+
+        if clock_out_dt < end_dt:
+            early_seconds = (end_dt - clock_out_dt).total_seconds()
+            # Sanity check: if more than 8 hours early, it's likely an error
+            if early_seconds > 8 * 3600:
+                return "-"
+            early_minutes = int(early_seconds // 60)
+            return early_minutes if early_minutes > 0 else "-"
+
         return "-"
 
     def calc_work_hours(self, row: Series) -> float:
-        """計算工作時數"""
+        """計算工作時數 (待在公司的總時數)"""
         if pd.isna(row['Clock-in']) or pd.isna(row['Clock-out']):
             return 0.0
 
-        shift_code = self.map_shift(row)
-        shift_info = self.shift_rules.get(shift_code)
+        actual_start_time = row['Clock-in']
+        actual_end_time = row['Clock-out']
 
-        if not shift_info:
-            return 0.0
+        work_start_dt = datetime.combine(datetime.today(), actual_start_time)
+        work_end_dt = datetime.combine(datetime.today(), actual_end_time)
 
-        is_friday = row.get('Day', '').strip().lower() == 'fri.'
-        scheduled_start = shift_info['start']
-        total_break = shift_info['break']
-
-        actual_start = max(row['Clock-in'], scheduled_start)
-        actual_end = row['Clock-out']
-
-        work_start_dt = datetime.combine(datetime.today(), actual_start)
-        work_end_dt = datetime.combine(datetime.today(), actual_end)
-
-        if actual_start > actual_end:
+        # Handle night shifts where end time is on the next day
+        if work_start_dt > work_end_dt:
             work_end_dt += timedelta(days=1)
 
         work_hours = (work_end_dt - work_start_dt).total_seconds() / 3600
 
-        if is_friday and shift_info['friday_end'] == time(19, 40):
-            net_hours = max(0.0, work_hours - total_break - 1.0)
-        else:
-            net_hours = max(0.0, work_hours - total_break)
-
-        return round(net_hours, 2)
+        return round(work_hours, 2)
 
     def calc_ot(self, row: Series) -> float:
         """計算加班時數"""
         shift_code = self.map_shift(row)
-        if not shift_code:
+        if pd.isna(shift_code):
             return 0.0
 
         shift_code = shift_code.strip().upper()
         work_hours = row['WORK']
         day = row['Day'].strip().lower()
 
-        if shift_code not in ['A1', 'A2']:
+        if shift_code not in ['A1', 'A2', 'C1']:
             return 0.0
 
-        if row['DAY TYPE'] == "PH":
-            ot_units = math.floor(work_hours * 60 / 30) * 0.5
-            if ot_units > 8:
-                self.monthly_counters['OT2.0'] += 8
-                self.monthly_counters['OT3.0'] += ot_units - 8
-            else:
+        # Logic for PH, Sunday, and Saturday OT is based on total work hours
+        if row['DAY TYPE'] == "PH" or day in ["sun.", "sat."]:
+            shift_info = self.shift_rules.get(shift_code)
+            if not shift_info:
+                return 0.0
+
+            # Calculate net work hours based on day type and dynamic rest rules
+            net_work_hours = 0.0
+            if day in ["sun.", "ph"]: # For Sunday and Public Holiday
+                if work_hours < 5.5:
+                    net_work_hours = work_hours
+                elif 5.5 <= work_hours < 10.5:
+                    net_work_hours = work_hours - 1.0
+                else: # work_hours >= 10.5
+                    net_work_hours = work_hours - 1.5
+            elif day == "sat.": # For Saturday, use fixed break hours
+                break_hours = shift_info.get('break', 0.0)
+                net_work_hours = work_hours - break_hours if work_hours > break_hours else 0
+
+            ot_units = math.floor(net_work_hours * 60 / 30) * 0.5
+
+            if row['DAY TYPE'] == "PH":
+                if ot_units > 8:
+                    self.monthly_counters['OT2.0'] += 8
+                    self.monthly_counters['OT3.0'] += ot_units - 8
+                else:
+                    self.monthly_counters['OT2.0'] += ot_units
+                return ot_units
+
+            elif day == "sun.":
                 self.monthly_counters['OT2.0'] += ot_units
-            return ot_units
+                return ot_units
 
-        elif day == "sun.":
-            ot_units = math.floor(work_hours * 60 / 30) * 0.5
-            self.monthly_counters['OT2.0'] += ot_units
-            return ot_units
+            elif day == 'sat.':
+                self.monthly_counters['OT1.5'] += ot_units
+                return ot_units
+            return 0.0  # Should not be reached
 
-        elif day == 'sat.':
-            ot_units = math.floor(work_hours * 60 / 30) * 0.5
-            self.monthly_counters['OT1.5'] += ot_units
-            return ot_units
-
+        # New logic for regular 'WORK' day OT, based on clock-out time
         else:
-            ot_hours = max(0, work_hours - 9)
+            shift_info = self.shift_rules.get(shift_code)
+            if not shift_info:
+                return 0.0
+
+            # Determine the correct scheduled end time, accounting for A2's special Friday rule
+            is_friday = day.strip().lower() == 'fri.'
+            scheduled_end = shift_info['friday_end'] if is_friday and shift_info.get('friday_end') else shift_info['end']
+
+            clock_out = row['Clock-out']
+            if pd.isna(clock_out) or pd.isna(row['Clock-in']):
+                return 0.0
+
+            # Create datetime objects for accurate comparison
+            base_date = row['Date']
+            scheduled_end_dt = datetime.combine(base_date, scheduled_end)
+            clock_out_dt = datetime.combine(base_date, clock_out)
+            is_night_shift = shift_info['start'] > shift_info['end']
+
+            # Adjust dates for night shifts to place them on the correct timeline
+            if is_night_shift:
+                scheduled_end_dt += timedelta(days=1)
+                # If clock-out is also on the next day (e.g., 06:05), adjust its date
+                if clock_out < shift_info['start']:
+                    clock_out_dt += timedelta(days=1)
+
+            # OT starts 30 minutes after the scheduled end time
+            ot_start_dt = scheduled_end_dt + timedelta(minutes=30)
+
+            ot_hours = 0.0
+            if clock_out_dt > ot_start_dt:
+                ot_delta = clock_out_dt - ot_start_dt
+                ot_hours = ot_delta.total_seconds() / 3600
+
+            # Convert calculated OT hours into 30-minute units, flooring any remainder
             ot_units = math.floor(ot_hours * 60 / 30) * 0.5
             self.monthly_counters['OT1.5'] += ot_units
             return ot_units
 
+
     def map_shift(self, row: Series) -> Optional[str]:
         """判斷班別"""
+        # emp_info = self.employee_df.loc[self.employee_df['Employee ID'] == row['Employee ID']]
+        # if emp_info.empty:
+        #     return None
+        # return emp_info.iloc[0]['Shift']
+        shift_string = None
+
+        if 'Shift' in row and pd.notna(row['Shift']):
+            shift_string = row['Shift']
+
+        # 從員工資料中獲取預設班別
         emp_info = self.employee_df.loc[self.employee_df['Employee ID'] == row['Employee ID']]
-        if emp_info.empty:
-            return None
-        return emp_info.iloc[0]['Shift']
+        default_shift = None
+        if not emp_info.empty:
+            default_shift = emp_info.iloc[0]['Shift']
+
+        # 如果考勤資料中有班別資訊，則進行判斷
+        if shift_string:
+            if "(08:00:00-18:00:00)" in shift_string:
+                # 如果考勤資料顯示為日班
+                # 若員工預設班別也是日班 (A1, A2, B1)，則保留原本的設定
+                if default_shift in ['A1', 'A2', 'B1']:
+                    return default_shift
+                # 若員工預設班別是夜班或其他，則預設為 A1
+                else:
+                    return "A1"
+            elif "(20:00:00-06:00:00)" in shift_string:
+                # 如果考勤資料顯示為夜班，則回傳 C1
+                return "C1"
+
+        # 如果考勤資料中沒有班別資訊，則回歸使用員工資料中的預設班別
+        return default_shift
+
 
     def map_dept(self, row: Series) -> Optional[str]:
         """判斷部門"""
@@ -245,7 +354,7 @@ class AttendanceProcessor:
 
         if (row['DAY TYPE'] == "OT" and
                 (pd.isna(row['Clock-in']) or pd.isna(row['Clock-out']) or
-                 row['Clock-out'] < time(18, 0))):
+                 row['EARLY_MIN'] != '-')):
             self.monthly_counters['CANNOT_OT'] += 1
             return "Cannot OT"
 
@@ -260,25 +369,44 @@ class AttendanceProcessor:
         return record.iloc[0]['Days'] if not record.empty else 0.0
 
     def map_meal(self, row: Series) -> int:
-        """判斷是否有午餐津貼"""
+        """判斷是否有伙食津貼"""
         if pd.isna(row['Clock-in']) or pd.isna(row['Clock-out']):
             return 0
 
-        record = self.meal_df[
-            (self.meal_df['Date'] == row['Date']) &
-            (self.meal_df['Employee ID'] == row['Employee ID'])
-            ]
+        record = self.meal_df[(self.meal_df['Date'] == row['Date']) &
+                              (self.meal_df['Employee ID'] == row['Employee ID'])]
 
-        if (row['DAY TYPE'] == 'WORK' and record.empty and
-                row['LATE_MIN'] == '-' and row['Clock-out'] >= time(18, 0)):
-            self.monthly_counters['MEAL'] += 3
-            return 3
+        # Basic conditions: must be a workday, no out going record
+        if row['DAY TYPE'] != 'WORK' or not record.empty:
+            return 0
+
+        shift_code = self.map_shift(row)
+        shift_info = self.shift_rules.get(shift_code)
+
+        if not shift_info:
+            return 0
+
+        clock_out = row['Clock-out']
+
+        # Logic for day shifts based on original implementation
+        if shift_code in ['A1', 'A2', 'B1']:
+            if clock_out >= time(18, 0):
+                self.monthly_counters['MEAL'] += 3
+                return 3
+
+        # Logic for night shift 'C1'
+        elif shift_code == 'C1':
+            # To get allowance, clock-out must be on the next calendar day AND after the scheduled end time.
+            if clock_out < shift_info['start'] and clock_out >= shift_info['end']:
+                self.monthly_counters['MEAL'] += 3
+                return 3
+
         return 0
 
     def auto_day_type(self, row: Series) -> str:
         """自動判斷工作日類型"""
         shift_code = self.map_shift(row)
-        if not shift_code:
+        if pd.isna(shift_code):
             return 'OFF'
 
         shift_code = shift_code.strip().upper()
@@ -291,7 +419,7 @@ class AttendanceProcessor:
             ]
 
         if not personal_record.empty:
-            return personal_record.iloc[0]['Festival Name']
+            return 'REST'
 
         # 檢查一般假期
         general_record = self.holiday_df[
