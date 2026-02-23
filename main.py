@@ -3,7 +3,7 @@ import shutil
 import logging
 import traceback
 from datetime import datetime, time, timedelta
-from typing import Dict, Any, Optional, Union
+from typing import Dict, Optional, Union
 from pathlib import Path
 
 import pandas as pd
@@ -17,7 +17,6 @@ from pandas import Series
 from tqdm import tqdm
 import sys
 import os
-
 
 class AttendanceProcessor:
     """考勤處理器類別"""
@@ -68,7 +67,13 @@ class AttendanceProcessor:
         }
 
     def _get_shift_rules(self) -> Dict[str, Dict]:
-        """取得班別規則"""
+        """
+        取得班別規則
+        A1: 回教徒(女 DL)
+        A2: 回教徒(男 DL)
+        B1: 非回教徒 / IDL
+        C1: 夜班
+        """
         return {
             'A1': {
                 'start': time(8, 00), 'end': time(18, 00),
@@ -211,8 +216,8 @@ class AttendanceProcessor:
         work_hours = row['WORK']
         day = row['Day'].strip().lower()
 
-        if shift_code not in ['A1', 'A2', 'C1']:
-            return 0.0
+        # if shift_code not in ['A1', 'A2', 'C1']:
+        #     return 0.0
 
         # Logic for PH, Sunday, and Saturday OT is based on total work hours
         if row['DAY TYPE'] == "PH" or day in ["sun.", "sat."]:
@@ -292,7 +297,6 @@ class AttendanceProcessor:
             self.monthly_counters['OT1.5'] += ot_units
             return ot_units
 
-
     def map_shift(self, row: Series) -> Optional[str]:
         """判斷班別"""
         # emp_info = self.employee_df.loc[self.employee_df['Employee ID'] == row['Employee ID']]
@@ -326,7 +330,6 @@ class AttendanceProcessor:
 
         # 如果考勤資料中沒有班別資訊，則回歸使用員工資料中的預設班別
         return default_shift
-
 
     def map_dept(self, row: Series) -> Optional[str]:
         """判斷部門"""
@@ -484,16 +487,31 @@ class AttendanceProcessor:
         self.meal_df = xls.get('Meal')
         self.manualot_df = xls.get('Manual OT')
 
-        # 格式轉換
-        self.attendance_df['Clock-in'] = pd.to_datetime(
-            self.attendance_df['Clock-in'], errors='coerce'
-        ).dt.time
-        self.attendance_df['Clock-out'] = pd.to_datetime(
-            self.attendance_df['Clock-out'], errors='coerce'
-        ).dt.time
+        # 格式轉換 - 確保日期與時間格式正確，避免 Text 格式導致報錯
+        # 1. 處理 Attendance 的日期與時間
+        if self.attendance_df is not None:
+            self.attendance_df['Date'] = pd.to_datetime(self.attendance_df['Date'], errors='coerce')
+            
+            # 使用 astype(str) 確保不管是 datetime.time 還是 string 都能被 pd.to_datetime 正確解析
+            self.attendance_df['Clock-in'] = pd.to_datetime(
+                self.attendance_df['Clock-in'].astype(str), errors='coerce'
+            ).dt.time
+            self.attendance_df['Clock-out'] = pd.to_datetime(
+                self.attendance_df['Clock-out'].astype(str), errors='coerce'
+            ).dt.time
 
-        self.leave_df['Start Date'] = pd.to_datetime(self.leave_df['Start Date'])
-        self.leave_df['End Date'] = pd.to_datetime(self.leave_df['End Date'])
+        # 2. 處理 Leave 的日期
+        if self.leave_df is not None:
+            self.leave_df['Start Date'] = pd.to_datetime(self.leave_df['Start Date'], errors='coerce')
+            self.leave_df['End Date'] = pd.to_datetime(self.leave_df['End Date'], errors='coerce')
+
+        # 3. 處理其他包含 Date 的工作表
+        if self.holiday_df is not None:
+            self.holiday_df['Date'] = pd.to_datetime(self.holiday_df['Date'], errors='coerce')
+        if self.meal_df is not None:
+            self.meal_df['Date'] = pd.to_datetime(self.meal_df['Date'], errors='coerce')
+        if self.manualot_df is not None:
+            self.manualot_df['Date'] = pd.to_datetime(self.manualot_df['Date'], errors='coerce')
 
     def _process_attendance_data(self):
         """處理考勤資料"""
